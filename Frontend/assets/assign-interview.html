@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Interview | IFMS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3>IFMS</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item">
+                    <a href="candidates-interviewers.html" class="sidebar-link">
+                        <i class="fas fa-users"></i> Candidates & Interviewers
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="hr-workflow.html" class="sidebar-link">
+                        <i class="fas fa-project-diagram"></i> Interview Workflow
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="assign-interview.html" class="sidebar-link active">
+                        <i class="fas fa-tasks"></i> Assign Interview
+                    </a>
+                </li>
+            
+                <li class="sidebar-item">
+                    <a href="profile.html" class="sidebar-link">
+                        <i class="fas fa-user"></i> Profile
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="index.html" id="logoutBtn" class="sidebar-link">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <!-- Toggle Button for Mobile -->
+        <button class="btn sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Assign Interview</h2>
+                <div class="user-info">
+                    <span>Welcome, <strong id="userName">HR Manager</strong></span>
+                </div>
+            </div>
+
+            <!-- Assign Interview Form -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">New Interview Assignment</h3>
+                </div>
+                <div class="card-body">
+                    <form id="assign-interview-form">
+                        <div class="row">
+                            <!-- Candidate Information Section -->
+                            <div class="col-md-6">
+                                <h4 class="mb-3">Candidate Information</h4>
+                            
+                                <div class="form-group">
+                                    <label for="candidate-select" class="form-label">Select Candidate*</label>
+                                    <select id="candidate-select" class="form-control" required>
+                                        <option value="">Select Candidate</option>
+                                        <!-- Candidates will be loaded dynamically -->
+                                    </select>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="candidate-name" class="form-label">Candidate Name*</label>
+                                    <input type="text" id="candidate-name" class="form-control" readonly>
+                                </div>
+                            
+                                <div class="form-group">
+                                    <label for="candidate-email" class="form-label">Candidate Email*</label>
+                                    <input type="email" id="candidate-email" class="form-control" readonly>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="role-applied" class="form-label">Role Applied For*</label>
+                                    <input type="text" id="role-applied" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="experience" class="form-label">Experience (Years)</label>
+                                    <input type="number" id="experience" class="form-control" min="0" step="0.5">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="resume" class="form-label">Upload Resume</label>
+                                    <input type="file" id="resume" class="form-control" accept=".pdf,.doc,.docx">
+                                </div>
+                            </div>
+
+                            <!-- Interview Details Section -->
+                            <div class="col-md-6">
+                                <h4 class="mb-3">Interview Details</h4>
+
+                                <div class="form-group">
+                                    <label for="interview-round" class="form-label">Interview Round*</label>
+                                    <select id="interview-round" class="form-control" required>
+                                        <option value="">Select Round</option>
+                                        <option value="L1">L1 (First Round)</option>
+                                        <option value="L2">L2 (Second Round)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interviewer-select" class="form-label">Assign Interviewer*</label>
+                                    <select id="interviewer-select" class="form-control" required>
+                                        <option value="">Select Interviewer</option>
+                                        <!-- Interviewers will be loaded dynamically -->
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interview-date" class="form-label">Interview Date*</label>
+                                    <input type="date" id="interview-date" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interview-time" class="form-label">Interview Time*</label>
+                                    <input type="time" id="interview-time" class="form-control" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="duration" class="form-label">Duration (Minutes)*</label>
+                                    <select id="duration" class="form-control" required>
+                                        <option value="30">30 minutes</option>
+                                        <option value="45">45 minutes</option>
+                                        <option value="60" selected>60 minutes</option>
+                                        <option value="90">90 minutes</option>
+                                        <option value="120">120 minutes</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interview-type" class="form-label">Interview Type*</label>
+                                    <select id="interview-type" class="form-control" required>
+                                        <option value="online">Online</option>
+                                        <option value="in-person">In-Person</option>
+                                        <option value="phone">Phone</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" id="meeting-link-group" style="display: none;">
+                                    <label for="meeting-link" class="form-label">Meeting Link</label>
+                                    <input type="url" id="meeting-link" class="form-control"
+                                        placeholder="https://meeting.example.com/123">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Information Section -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <h4 class="mb-3">Additional Information</h4>
+
+                                <div class="form-group">
+                                    <label for="notes" class="form-label">Notes for Interviewer</label>
+                                    <textarea id="notes" class="form-control" rows="4"
+                                        placeholder="Add any specific instructions or information for the interviewer..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input type="checkbox" id="send-email" class="form-check-input" checked>
+                                        <label for="send-email" class="form-check-label">Send email notification to
+                                            interviewer</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-right">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" form="assign-interview-form" class="btn btn-primary">Assign Interview</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/assign-interview.js"></script>
+</body>
+
+</html>
