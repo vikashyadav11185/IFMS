@@ -3,10 +3,11 @@ Interview Feedback Management System
 >>>>>> main
 =======
 
-<<<<<< frontend
 Interview Feedback Management System Frontend
+>>>>>> frontend
 =======
 
-<<<<<< Backend
 Interview Feedback Management System Backend
+>>>>>> Backend
+=======
 
