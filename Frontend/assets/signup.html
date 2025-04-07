@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFMS - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2 class="text-primary">Interview Feedback System</h2>
+                <p>Create your account</p>
+            </div>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="Enter your company email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="Enter your password"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="role" class="form-label">Role</label>
+                    <select id="role" class="form-control" required>
+                        <option value="" selected disabled>Select your role</option>
+                        <option value="INTERVIEWER">Interviewer</option>
+                        <option value="HR_MANAGER">HR Manager</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="position" class="form-label">Position</label>
+                    <select id="position" class="form-control" required>
+                        <option value="" selected disabled>Select your Position</option>
+                        <option value="HUMAN_RESOURCE">Human Resource</option>
+                        <option value="JAVA_DEVELOPER">Java Developer</option>
+                        <option value="DATA_ENGINEER">Data Engineer</option>
+                        <option value="DEVOPS_ENGINEER">Devops Engineer</option>
+                        <option value="FRONTEND_DEVELOPER">Frontend Developer</option>
+                        <option value="BACKEND_DEVELOPER">Backend Developer</option>
+                        <option value="PYTHON_DEVELOPER">Python Developer</option>
+                        <option value="SOFTWARE_ENGINEER">Software Engineer</option>
+                    </select>
+                </div>
+                <div id="error-message" class="error-text" style="color: red; margin-bottom: 15px;"></div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </form>
+            <div class="auth-footer">
+                <p>Already have an account? <a href="index.html">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>
